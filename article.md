@@ -1,23 +1,22 @@
 ---
 # File metadata may be provided as frontmatter YAML
-title: La Palma Seismicity 2021
-subtitle: An analysis of earthquake swarms in relation to the 2021 eruption
-description: Analysis of the seismic earthquake data during the eruption
+title: Lorem Ipsum Dolor Sit Amet
+subtitle: Consectetur adipiscing elit sed do eiusmod tempor incididunt
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 date: 2021-11-10
 tags:
-  - volcano
-  - seismicity
-  - la-palma
-thumbnail: images/la-palma-eruption-2022-paper.png
+  - lorem
+  - ipsum
+  - dolor
+thumbnail: images/banner.png
 abstract: |
-  In September 2021, a significant jump in seismic activity on the island of La Palma (Canary Islands, Spain) signaled the start of a volcanic crisis that still continues at the time of writing. Earthquake data is continually collected and published by the Instituto Geográphico Nacional (IGN). We have created an accessible dataset from this and completed preliminary data analysis which shows seismicity originating at two distinct depths, consistent with the model of a two reservoir system feeding the currently very active volcano.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. We have created an accessible dataset from this and completed preliminary data analysis which shows two distinct example groupings, consistent with a generic two-part model used for illustration purposes.
 summary: |
-  In September 2021, heightened seismic activity on La Palma signaled an ongoing volcanic crisis; analysis of Instituto Geográfico Nacional data reveals seismicity at two depths, supporting a dual-reservoir system for the active volcano.
-# AGU requires a Data Availability Statement for the underlying data needed to understand, evaluate, and build upon the reported research at the time of peer review and publication.
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur; analysis of the example dataset reveals two distinct groupings, supporting a generic dual-component model used purely for illustration.
 data_availability: |
-  A web scraping script was developed to pull data into a machine-readable form for analysis. That code tool [is available on GitHub](https://github.com/stevejpurves/ign-earthquake-data) along with a copy of recently updated data.
+  The [`enos.ipynb`](./notebooks/enos.ipynb) notebook fetches the Oceanic Niño Index directly from the [NOAA Climate Prediction Center](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt) at runtime; no local copy of that dataset is required in the `data/` folder.
 acknowledgments: |
-  The authors would like to thank the Notebooks Now working groups for their help on creating these templates and advising on metadata.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. The authors would like to thank the example working group for their help on creating these templates.
 keypoints:
   - You may specify 1 to 3 keypoints for this PDF template
   - These keypoints are complete sentences and less than or equal to 140 characters
@@ -28,50 +27,50 @@ keypoints:
 
 > The content of your article is written in MyST markdown and supports [standard markdown typography](https://mystmd.org/guide/typography) and many [directives and roles](https://mystmd.org/guide/syntax-overview) for figures, tables, equations, etc.
 
-La Palma is one of the west most islands in the Volcanic Archipelago of the Canary Islands, a Spanish territory situated is the Atlantic Ocean where at their closest point are 100km from the African coast [Figure %s](#map) The island is one of the youngest, remains active and is still in the island forming stage.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua [Figure %s](#map). Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 > Figures may be added to your article using the [figure directive](https://mystmd.org/guide/figures). They may refer to images saved in your `images/` folder, images from the web, or notebook cell outputs [referenced by label](https://mystmd.org/guide/cross-references#targeting-cells). The `:name:` is used to reference the figure in your text; a reference to the following figure is found in the paragraph above. The figure caption is given as the body of this directive.
 
-```{figure} images/la-palma-map.png
+```{figure} images/banner.png
 :name: map
 :align: center
 :width: 100%
 
-Map of La Palma in the Canary Islands. Image credit [NordNordWest](https://commons.wikimedia.org/w/index.php?curid=76638603)
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Image credit [Example Source](https://example.com)
 ```
 
-La Palma has been constructed by various phases of volcanism, the most recent and currently active being the _Cumbre Vieja_ volcano, a north-south volcanic ridge that constitutes the southern half of the island.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, an example structure that constitutes the illustrative portion of this template.
 
-# Eruption History
+# Example History
 
-A number of eruptions were recorded since the colonization of the islands by Europeans in the late 1400s, these are summarized in [Table %s](#history).
+A number of example events were recorded over time, these are summarized in [Table %s](#history).
 
 > Simple tables may be created using the [list-table directive](https://mystmd.org/guide/tables). Similar to figures, tables may be referenced in the text by their `name`. The caption for this table is the first line of the directive.
 
-```{list-table} Recent historic eruptions on La Palma
+```{list-table} Example recent historic events
 :header-rows: 1
 :name: history
 * - Name
   - Year
-* - Current
+* - Lorem
   - 2021
-* - Teneguía
+* - Ipsum
   - 1971
-* - Nambroque
+* - Dolor
   - 1949
-* - El Charco
+* - Sit
   - 1712
-* - Volcán San Antonio
+* - Amet
   - 1677
-* - Volcán San Martin
+* - Consectetur
   - 1646
-* - Tajuya near El Paso
+* - Adipiscing
   - 1585
-* - Montaña Quemada
+* - Elit
   - 1492
 ```
 
-This equates to an eruption on average every 79 years up until the 1971 event. The probability of a future eruption can be modeled by a Poisson distribution [](#poisson).
+This equates to an example event on average every 79 years up until the 1971 event. The probability of a future event can be modeled by a Poisson distribution [](#poisson).
 
 > Numbered equations may be defined using the [math directive or in line](https://mystmd.org/guide/math). Equations defined with the math directive may be reference in the text by label.
 
@@ -89,49 +88,35 @@ Where $\lambda$ is the number of eruptions per year, $\lambda=\frac{1}{79}$ in t
 p_e = 1-\mathrm{e}^{-t \lambda}
 ```
 
-So following the 1971 eruption the probability of an eruption in the following 50 years — the period ending this year — was 0.469. After the event, the number of eruptions per year moves to $\lambda=\frac{1}{75}$ and the probability of a further eruption within the next 50 years (2022-2071) rises to 0.487 and in the next 100 years, this rises again to 0.736.
+So following the 1971 example event the probability of a similar event in the following 50 years — the period ending this year — was 0.469. After the event, the rate moves to $\lambda=\frac{1}{75}$ and the probability of a further event within the next 50 years (2022-2071) rises to 0.487 and in the next 100 years, this rises again to 0.736.
 
-## Magma Reservoirs
+## Example Model
 
 > You may [add citations two ways](https://mystmd.org/guide/citations). First, you may simply insert a markdown link to a DOI like so: [](10.1093/nar/22.22.4673). No additional bibliographic information is required for this approach; the reference will be looked up by DOI and added implicitly to the references. Alternatively, you may provide the bibliography directly as `references.bib` BibTeX file, then embed the citation by BibTeX key in your text using the `@cite2023` or `[@cite2023; @cite2023b]` for narrative or parenthetical citations, respectively. The following paragraph provides an example of this. A single paper may combine both DOI and BibTeX citations.
 
-Studies of the magma systems feeding the volcano, such as @marrero2019 has proposed that there are two main magma reservoirs feeding the Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges and in turn feeds a shallower crustal reservoir (10-20km depth).
+Lorem ipsum studies, such as @loremipsum2024 have proposed a generic two-part example model; one component (30-40 example units) which feeds a second, shallower example component (10-20 example units).
 
-```{figure} images/reservoirs.png
-:name: reservoirs
-:align: center
-:width: 100%
-
-Proposed model from @marrero2019.
-```
-
-In this paper, we look at recent seismicity data to see if we can see evidence of such a system action, see [Figure %s](#reservoirs).
+In this template, we look at example data to see if we can see evidence of such a system in action.
 
 # Dataset
 
 > All data used in the notebook should be present in the `data/` folder so notebooks may be executed in place with no additional input.
 
-The earthquake dataset used in our analysis was generated from the [IGN web portal](https://www.ign.es/web/resources/volcanologia/tproximos/canarias.html) this is public data released under a permissive license. Data recorded using the network of Seismic Monitoring Stations on the island. A web scraping script was developed to pull data into a machine-readable form for analysis. That code tool [is available on GitHub](https://github.com/stevejpurves/ign-earthquake-data) along with a copy of recently updated data.
+As a worked example of pulling data from a live external source, the [`enos.ipynb`](./notebooks/enos.ipynb) notebook loads the Oceanic Niño Index (ONI) directly from the [NOAA Climate Prediction Center](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt), a public dataset released without restriction. The notebook fetches the ASCII table at build time, so no local copy needs to be kept in the `data/` folder for this example.
 
 # Results
 
-The dataset was loaded into a Jupyter notebook [visualization](./notebooks/visualization-figure-creation-seaborn.ipynb) and filtered down to La Palma events only. This results in 5465 data points which we then visualized to understand their distributions spatially, by depth, by magnitude and in time.
+The ONI series was loaded and processed in the [`enos.ipynb`](./notebooks/enos.ipynb) notebook, converting the published 3-month running seasons into a time series and classifying each season as El Niño, La Niña, or Neutral using the standard ±0.5°C anomaly threshold.
 
-```{figure} #eq-timeline
-:name: timeline
+```{figure} #fig-enso
+:name: enso
 
-Earthquake data over time (n=5465) to understand their distributions spatially, by depth, by magnitude and in time.
-This figure uses cell output from the [visualization notebook](./notebooks/visualization-figure-creation-seaborn.ipynb). The first line of the [cell](#eq-timeline) is `#| label: eq-timeline`. Referencing that label pulls in the output of the cell as a figure.
+Oceanic Niño Index (ONI) anomaly over time, colored by ENSO phase (El Niño / La Niña / Neutral).
+This figure uses cell output from the [`enos.ipynb`](./notebooks/enos.ipynb) notebook. The first line of the [cell](#fig-enso) is `#| label: fig-enso`. Referencing that label pulls in the output of the cell as a figure.
 ```
 
-From our analysis in [Figure %s](#timeline), we can see 3 different systems in play.
-
-Firstly, the shallow earthquake swarm leading up to the eruption on 19th September, related to significant surface deformation and shallow magma intrusion.
-
-After the eruption, continuous shallow seismicity started at 10-15km corresponding to magma movement in the crustal reservoir.
-
-Subsequently, high magnitude events begin occurring at 30-40km depths corresponding to changes in the mantle reservoir. These are also continuous but occur with a lower frequency than in the crustal reservoir.
+From [Figure %s](#enso), we can see the alternating warm (El Niño) and cool (La Niña) phases through the historical record, with anomalies regularly exceeding the ±0.5°C classification threshold in both directions.
 
 # Conclusions
 
-From the analysis of the earthquake data collected and published by IGN for the period of 11 September through to 9 November 2021. Visualization of the earthquake events at different depths appears to confirm the presence of both mantle and crustal reservoirs as proposed by @marrero2019.
+This template demonstrates a complete example workflow in [`enos.ipynb`](./notebooks/enos.ipynb): fetching live data from a public NOAA source, processing it into a labeled time series, and embedding the resulting figure directly into this article via a notebook cell output reference.

@@ -1,65 +1,58 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  title: La Palma Seismicity 2021
-  subtitle: An analysis of earthquake swarms in relation to the 2021 eruption
+  title: Lorem Ipsum Dolor Sit Amet
+  subtitle: Consectetur adipiscing elit sed do eiusmod tempor
   authors:
-    - id: spurves
-      name: Steve Purves
-      orcid: 0000-0002-0760-5497
+    - id: author1
+      name: Jane Doe
+      orcid: 0000-0000-0000-0000
       corresponding: true
-      email: steve@curvenote.com
+      email: jane.doe@example.com
       roles:
         - Investigation
         - Project administration
         - Software
         - Visualization
       affiliations:
-        - curvenote
-    - id: rcockett
-      name: Rowan Cockett
-      orcid: 0000-0002-7859-8394
+        - example-org
+    - id: author2
+      name: John Smith
+      orcid: 0000-0000-0000-0001
       corresponding: false
       role: Project administration
       affiliations:
-        - curvenote
+        - example-org
   affiliations:
-    - id: curvenote
-      name: Curvenote Inc.
-      department: Publications Team
-      country: Canada
-      url: https://curvenote.com
-      email: support@curvenote.com
+    - id: example-org
+      name: Example Organization
+      department: Example Department
+      country: Example Country
+      url: https://example.com
+      email: contact@example.com
       phone: 123-456-7890
       fax: 123-456-7891
-  github: https://github.com/Notebooks-Now/submission-myst-full/
   open_access: true
   license:
     content: CC-BY-SA-4.0
     code: MIT
   funding:
-    - statement: Supported by Notebooks Now! at AGU
+    - statement: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       id: 10070
       source:
-        - name: Alfred P. Sloan Foundation
-          doi: http://dx.doi.org/10.13039/100000879
+        - name: Example Funding Foundation
+          doi: http://dx.doi.org/10.13039/100000000
   subject: Original Submission
-  venue:
-    title: Notebooks Now!
-    url: https://data.agu.org/notebooks-now/
   keywords:
-    - La Palma
-    - Earthquakes
+    - Lorem
+    - Ipsum
   date: 2022-10-11
   requirements:
     - environment.yml
   resources:
     - README.md
-    - data/catalogoComunSV_1663233588717.csv
-    - data/lapalma_ign.csv
   banner: ./images/banner.png
   options:
-    journal_name: Notebooks Now!
     draft: false
   exports:
     - format: meca
@@ -68,26 +61,19 @@ project:
     - format: jats
       article: article.md
       sub_articles:
-        - notebooks/seismic-monitoring.md
-        - notebooks/data-screening.ipynb
-        - notebooks/visualization-figure-creation-seaborn.ipynb
+        - notebooks/enos.ipynb
     - format: pdf
       article: article.md
       output: article.pdf
-      template: agu2019
     - format: tex
       article: article.md
       output: tex.zip
-      template: agu2019
   jupyter: true
 site:
-  title: La Palma Seismicity 2021
+  title: Lorem Ipsum Dolor Sit Amet
   options:
-    logo_text: La Palma Seismicity 2021
+    logo_text: Lorem Ipsum Dolor Sit Amet
   nav:
     - title: MyST Docs
       url: https://mystmd.org/guide
-  actions:
-    - title: Notebooks Now!
-      url: https://data.agu.org/notebooks-now/
   template: article-theme
