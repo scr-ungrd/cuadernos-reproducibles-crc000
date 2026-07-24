@@ -1,8 +1,8 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  title: Lorem Ipsum Dolor Sit Amet
-  subtitle: Consectetur adipiscing elit sed do eiusmod tempor
+  title: Plantilla de Artículo MyST en Español
+  subtitle: Las partes de un artículo reproducible en MyST
   authors:
     - id: author1
       name: Jane Doe
@@ -25,9 +25,9 @@ project:
         - example-org
   affiliations:
     - id: example-org
-      name: Example Organization
-      department: Example Department
-      country: Example Country
+      name: Organización de Ejemplo
+      department: Departamento de Ejemplo
+      country: País de Ejemplo
       url: https://example.com
       email: contact@example.com
       phone: 123-456-7890
@@ -37,16 +37,16 @@ project:
     content: CC-BY-SA-4.0
     code: MIT
   funding:
-    - statement: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    - statement: Declaración de financiamiento de ejemplo.
       id: 10070
       source:
-        - name: Example Funding Foundation
+        - name: Fundación de Financiamiento de Ejemplo
           doi: http://dx.doi.org/10.13039/100000000
-  subject: Original Submission
+  subject: Envío original
   keywords:
-    - Lorem
-    - Ipsum
-  date: 2022-10-11
+    - MyST
+    - Plantilla
+  date: 2026-07-24
   requirements:
     - environment.yml
   resources:
@@ -70,10 +70,10 @@ project:
       output: tex.zip
   jupyter: true
 site:
-  title: Lorem Ipsum Dolor Sit Amet
+  title: Plantilla de Artículo MyST en Español
   options:
-    logo_text: Lorem Ipsum Dolor Sit Amet
+    logo_text: Plantilla de Artículo MyST en Español
   nav:
-    - title: MyST Docs
+    - title: Guía de MyST
       url: https://mystmd.org/guide
   template: article-theme

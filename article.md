@@ -1,78 +1,132 @@
 ---
-# File metadata may be provided as frontmatter YAML
-title: Lorem Ipsum Dolor Sit Amet
-subtitle: Consectetur adipiscing elit sed do eiusmod tempor incididunt
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-date: 2021-11-10
+# Los metadatos del archivo se especifican como YAML de frontmatter
+title: Plantilla de Artículo MyST en Español
+subtitle: Cómo se documentan las partes de un artículo reproducible en MyST
+description: Plantilla en español que recorre las secciones y directivas típicas de un artículo MyST, aplicadas al ejemplo del Índice Oceánico Niño (ONI).
+date: 2026-07-24
 tags:
-  - lorem
-  - ipsum
-  - dolor
+  - myst
+  - plantilla
+  - artículo reproducible
 thumbnail: images/banner.png
 abstract: |
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. We have created an accessible dataset from this and completed preliminary data analysis which shows two distinct example groupings, consistent with a generic two-part model used for illustration purposes.
+  Esta plantilla presenta, en español, las partes que componen un artículo científico reproducible escrito en MyST Markdown: metadatos, introducción, figuras, tablas, ecuaciones, citas, código ejecutable y datos. Como caso de aplicación se usa el Índice Oceánico Niño (ONI), publicado por el NOAA Climate Prediction Center, para mostrar cómo incrustar en el artículo la salida de un cuaderno de Jupyter.
 summary: |
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur; analysis of the example dataset reveals two distinct groupings, supporting a generic dual-component model used purely for illustration.
+  Guía en español de las partes de un artículo MyST, ilustrada con el procesamiento y la visualización del Índice Oceánico Niño (ONI).
 data_availability: |
-  The [`enos.ipynb`](./notebooks/enos.ipynb) notebook fetches the Oceanic Niño Index directly from the [NOAA Climate Prediction Center](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt) at runtime; no local copy of that dataset is required in the `data/` folder.
+  El cuaderno [`enos.ipynb`](./notebooks/enos.ipynb) obtiene el Índice Oceánico Niño directamente del [NOAA Climate Prediction Center](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt) en tiempo de compilación; no se requiere guardar una copia local de estos datos en la carpeta `data/`.
 acknowledgments: |
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. The authors would like to thank the example working group for their help on creating these templates.
+  Plantilla adaptada al español a partir de la plantilla oficial de MyST y de la organización de contenidos de [opengeos/myst-article-template](https://github.com/opengeos/myst-article-template).
 keypoints:
-  - You may specify 1 to 3 keypoints for this PDF template
-  - These keypoints are complete sentences and less than or equal to 140 characters
-  - They are specific to this PDF template, so they will not appear in other exports plain
+  - Esta plantilla documenta en español las partes de un artículo MyST
+  - Cada sección ilustra una directiva distinta - figuras, tablas, ecuaciones, citas y código ejecutable
+  - El ejemplo aplicado usa el Índice Oceánico Niño del cuaderno enos.ipynb
 ---
 
-# Introduction
+# Introducción
 
-> The content of your article is written in MyST markdown and supports [standard markdown typography](https://mystmd.org/guide/typography) and many [directives and roles](https://mystmd.org/guide/syntax-overview) for figures, tables, equations, etc.
+> El contenido de tu artículo se escribe en MyST Markdown y admite la [tipografía estándar de markdown](https://mystmd.org/guide/typography), además de numerosas [directivas y roles](https://mystmd.org/guide/syntax-overview) para figuras, tablas, ecuaciones, código ejecutable, etc.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua [Figure %s](#map). Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Esta plantilla recorre, sección por sección, las partes habituales de un artículo MyST: los metadatos del frontmatter, el texto narrativo, las figuras, las tablas, las ecuaciones, las citas y el código ejecutable. Cada apartado incluye una nota como esta, en formato de cita, que explica la directiva correspondiente antes de mostrarla en uso.
 
-> Figures may be added to your article using the [figure directive](https://mystmd.org/guide/figures). They may refer to images saved in your `images/` folder, images from the web, or notebook cell outputs [referenced by label](https://mystmd.org/guide/cross-references#targeting-cells). The `:name:` is used to reference the figure in your text; a reference to the following figure is found in the paragraph above. The figure caption is given as the body of this directive.
+## A quién está dirigida esta plantilla
+
+Esta plantilla está pensada para autores de habla hispana que quieran preparar un artículo reproducible con MyST: informes técnicos, notas de análisis de datos o artículos científicos que combinen texto, código y figuras generadas a partir de cuadernos de Jupyter.
+
+## Cómo leer este artículo
+
+Cada sección se apoya en la anterior. Las citas en formato de bloque (como las de este párrafo) explican qué directiva de MyST se está usando; el texto que sigue muestra un ejemplo concreto de esa directiva.
+
+# Metadatos del artículo (frontmatter)
+
+> El bloque YAML al inicio de este archivo, delimitado por `---`, define los metadatos del artículo: título, subtítulo, autores, resumen (`abstract`), palabras clave, disponibilidad de datos y agradecimientos, entre otros campos descritos en la [documentación de frontmatter de MyST](https://mystmd.org/guide/frontmatter). Los metadatos del proyecto completo -autores, afiliaciones, licencia, financiamiento- se definen en `myst.yml`.
+
+Revisa el encabezado de este archivo y el archivo `myst.yml` en la raíz del proyecto para ver ejemplos de ambos niveles de metadatos: los específicos de este artículo y los del proyecto en su conjunto.
+
+# Primeros pasos
+
+## Conceptos clave
+
+> Puedes [agregar citas de dos maneras](https://mystmd.org/guide/citations). La primera es insertar un enlace de markdown a un DOI, así: [](10.1093/nar/22.22.4673); no se requiere información bibliográfica adicional, ya que la referencia se busca automáticamente por su DOI. La segunda es declarar la bibliografía en un archivo BibTeX, por convención `references.bib`, y citar por clave con `@cite2023` o `[@cite2023; @cite2023b]` para citas narrativas o parentéticas, respectivamente. Un mismo artículo puede combinar ambos estilos.
+
+Estudios de ejemplo, como @loremipsum2024, proponen un modelo genérico de dos componentes; una primera parte (30-40 unidades de ejemplo) que alimenta una segunda componente, más superficial (10-20 unidades de ejemplo).
+
+```{code-cell} ipython3
+print("¡Hola, MyST!")
+```
+
+> Las celdas de código como la anterior, definidas con la directiva `code-cell`, se ejecutan al compilar el artículo y su salida se incrusta directamente en el documento.
+
+## Herramientas empleadas
+
+> Las tablas simples se crean con la [directiva list-table](https://mystmd.org/guide/tables). Igual que las figuras, pueden referenciarse en el texto mediante su `name`. La primera línea de la directiva es el título de la tabla.
+
+```{list-table} Herramientas empleadas en esta plantilla
+:header-rows: 1
+:name: tab-herramientas
+
+* - Herramienta
+  - Descripción
+  - Versión
+* - Python
+  - Lenguaje de programación
+  - 3.x
+* - pandas
+  - Manejo de datos tabulares
+  - ver `environment.yml`
+* - Matplotlib
+  - Generación de figuras
+  - ver `environment.yml`
+* - MyST
+  - Marco de autoría en markdown
+  - ver `mystmd` instalado
+```
+
+Como se ve en la [Tabla %s](#tab-herramientas), el entorno se define de forma reproducible en `environment.yml`.
+
+# Instalación
+
+## Requisitos previos
+
+Para compilar este artículo necesitas Node.js (para el CLI de MyST) y un entorno de Python con las dependencias listadas en `environment.yml`.
+
+## Pasos de instalación
+
+```bash
+npm install -g mystmd
+conda env create -f environment.yml
+```
+
+## Verificar la instalación
+
+```{code-cell} ipython3
+import sys
+print(f"Versión de Python: {sys.version}")
+```
+
+Luego compila todas las exportaciones definidas en `myst.yml`:
+
+```bash
+myst build --all
+```
+
+# Figuras
+
+> Las figuras se agregan con la [directiva figure](https://mystmd.org/guide/figures). Pueden referirse a imágenes guardadas en la carpeta `images/`, imágenes en la web, o salidas de celdas de un cuaderno [referenciadas por etiqueta](https://mystmd.org/guide/cross-references#targeting-cells). El atributo `:name:` permite referenciar la figura en el texto, como en el párrafo siguiente.
 
 ```{figure} images/banner.png
-:name: map
+:name: banner
 :align: center
 :width: 100%
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Image credit [Example Source](https://example.com)
+Imagen de encabezado de la plantilla, referenciada como [Figura %s](#banner) en el texto.
 ```
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, an example structure that constitutes the illustrative portion of this template.
+# Ecuaciones
 
-# Example History
+> Las ecuaciones numeradas se definen con la [directiva math o en línea](https://mystmd.org/guide/math). Las ecuaciones definidas con la directiva math pueden referenciarse en el texto por su etiqueta.
 
-A number of example events were recorded over time, these are summarized in [Table %s](#history).
-
-> Simple tables may be created using the [list-table directive](https://mystmd.org/guide/tables). Similar to figures, tables may be referenced in the text by their `name`. The caption for this table is the first line of the directive.
-
-```{list-table} Example recent historic events
-:header-rows: 1
-:name: history
-* - Name
-  - Year
-* - Lorem
-  - 2021
-* - Ipsum
-  - 1971
-* - Dolor
-  - 1949
-* - Sit
-  - 1712
-* - Amet
-  - 1677
-* - Consectetur
-  - 1646
-* - Adipiscing
-  - 1585
-* - Elit
-  - 1492
-```
-
-This equates to an example event on average every 79 years up until the 1971 event. The probability of a future event can be modeled by a Poisson distribution [](#poisson).
-
-> Numbered equations may be defined using the [math directive or in line](https://mystmd.org/guide/math). Equations defined with the math directive may be reference in the text by label.
+La probabilidad de que ocurra un evento puede modelarse con una distribución de Poisson [](#poisson).
 
 ```{math}
 :label: poisson
@@ -80,7 +134,7 @@ This equates to an example event on average every 79 years up until the 1971 eve
 p(x)=\frac{e^{-\lambda} \lambda^{x}}{x !}
 ```
 
-Where $\lambda$ is the number of eruptions per year, $\lambda=\frac{1}{79}$ in this case. The probability of a future eruption in the next $t$ years can be calculated by:
+Donde $\lambda$ es la tasa de ocurrencia del evento por año. La probabilidad de que ocurra al menos un evento en los próximos $t$ años se calcula como:
 
 ```{math}
 :label: probability
@@ -88,35 +142,27 @@ Where $\lambda$ is the number of eruptions per year, $\lambda=\frac{1}{79}$ in t
 p_e = 1-\mathrm{e}^{-t \lambda}
 ```
 
-So following the 1971 example event the probability of a similar event in the following 50 years — the period ending this year — was 0.469. After the event, the rate moves to $\lambda=\frac{1}{75}$ and the probability of a further event within the next 50 years (2022-2071) rises to 0.487 and in the next 100 years, this rises again to 0.736.
+# Datos y resultados
 
-## Example Model
+> Todos los datos usados en el cuaderno deben estar disponibles en la carpeta `data/`, o bien obtenerse en tiempo de ejecución desde una fuente externa, como en el ejemplo siguiente.
 
-> You may [add citations two ways](https://mystmd.org/guide/citations). First, you may simply insert a markdown link to a DOI like so: [](10.1093/nar/22.22.4673). No additional bibliographic information is required for this approach; the reference will be looked up by DOI and added implicitly to the references. Alternatively, you may provide the bibliography directly as `references.bib` BibTeX file, then embed the citation by BibTeX key in your text using the `@cite2023` or `[@cite2023; @cite2023b]` for narrative or parenthetical citations, respectively. The following paragraph provides an example of this. A single paper may combine both DOI and BibTeX citations.
+Como ejemplo de obtención de datos desde una fuente externa en vivo, el cuaderno [`enos.ipynb`](./notebooks/enos.ipynb) carga el Índice Oceánico Niño (ONI) directamente del [NOAA Climate Prediction Center](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt), un conjunto de datos público sin restricciones de uso. El cuaderno descarga la tabla ASCII al momento de compilar el artículo, por lo que no es necesario mantener una copia local en la carpeta `data/`.
 
-Lorem ipsum studies, such as @loremipsum2024 have proposed a generic two-part example model; one component (30-40 example units) which feeds a second, shallower example component (10-20 example units).
-
-In this template, we look at example data to see if we can see evidence of such a system in action.
-
-# Dataset
-
-> All data used in the notebook should be present in the `data/` folder so notebooks may be executed in place with no additional input.
-
-As a worked example of pulling data from a live external source, the [`enos.ipynb`](./notebooks/enos.ipynb) notebook loads the Oceanic Niño Index (ONI) directly from the [NOAA Climate Prediction Center](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt), a public dataset released without restriction. The notebook fetches the ASCII table at build time, so no local copy needs to be kept in the `data/` folder for this example.
-
-# Results
-
-The ONI series was loaded and processed in the [`enos.ipynb`](./notebooks/enos.ipynb) notebook, converting the published 3-month running seasons into a time series and classifying each season as El Niño, La Niña, or Neutral using the standard ±0.5°C anomaly threshold.
+La serie del ONI se procesa en el cuaderno [`enos.ipynb`](./notebooks/enos.ipynb), convirtiendo las temporadas móviles de 3 meses publicadas en una serie de tiempo y clasificando cada temporada como El Niño, La Niña o Neutral usando el umbral estándar de anomalía de ±0.5°C.
 
 ```{figure} #fig-enso
 :name: enso
 
-Oceanic Niño Index (ONI) anomaly over time, colored by ENSO phase (El Niño / La Niña / Neutral).
-This figure uses cell output from the [`enos.ipynb`](./notebooks/enos.ipynb) notebook. The first line of the [cell](#fig-enso) is `#| label: fig-enso`. Referencing that label pulls in the output of the cell as a figure.
+Anomalía del Índice Oceánico Niño (ONI) a lo largo del tiempo, coloreada según la fase ENOS (El Niño / La Niña / Neutral).
+Esta figura usa la salida de una celda del cuaderno [`enos.ipynb`](./notebooks/enos.ipynb). La primera línea de la [celda](#fig-enso) es `#| label: fig-enso`; referenciar esa etiqueta incorpora la salida de la celda como figura.
 ```
 
-From [Figure %s](#enso), we can see the alternating warm (El Niño) and cool (La Niña) phases through the historical record, with anomalies regularly exceeding the ±0.5°C classification threshold in both directions.
+En la [Figura %s](#enso) se observa la alternancia entre fases cálidas (El Niño) y frías (La Niña) a lo largo del registro histórico, con anomalías que superan regularmente el umbral de clasificación de ±0.5°C en ambas direcciones.
 
-# Conclusions
+# Conclusión
 
-This template demonstrates a complete example workflow in [`enos.ipynb`](./notebooks/enos.ipynb): fetching live data from a public NOAA source, processing it into a labeled time series, and embedding the resulting figure directly into this article via a notebook cell output reference.
+Esta plantilla mostró, en español, las partes principales de un artículo MyST -metadatos, figuras, tablas, ecuaciones, citas y código ejecutable- usando como caso aplicado el flujo completo del cuaderno [`enos.ipynb`](./notebooks/enos.ipynb): obtención de datos en vivo desde una fuente pública de NOAA, su procesamiento en una serie de tiempo clasificada, y la incorporación de la figura resultante directamente en el artículo mediante la referencia a la salida de una celda.
+
+## Agradecimientos
+
+Plantilla adaptada al español a partir de la plantilla oficial de MyST y de la organización de contenidos de [opengeos/myst-article-template](https://github.com/opengeos/myst-article-template).
