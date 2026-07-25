@@ -40,7 +40,8 @@ jobs:
       - name: Install TeX and packages
         run: |
           wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
-          echo "/home/runner/bin" >> $GITHUB_PATH
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          echo "$HOME/bin" >> $GITHUB_PATH
       - name: Install TeX packages
         run: |
           tlmgr install apacite lineno morefloats ragged2e soul glossaries
