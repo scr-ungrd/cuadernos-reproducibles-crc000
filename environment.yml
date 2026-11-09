@@ -1,8 +1,8 @@
-name: myst-notebook-template
+name: cuaderno-reproducible
 channels:
   - conda-forge
-  - default
 dependencies:
+  - python>=3.10
   - pandas
   - matplotlib
   - jupyterlab>=4.0.0

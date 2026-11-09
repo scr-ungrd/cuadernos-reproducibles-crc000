@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Si usas esta plantilla, cítala con los metadatos siguientes."
+title: "Plantilla de Cuaderno Reproducible de Conocimiento del Riesgo"
+type: software
+authors:
+  - name: "Subdirección para el Conocimiento del Riesgo, UNGRD"
+repository-code: "https://github.com/scr-ungrd/cuadernos-reproducibles-crc000"
+license: Apache-2.0
+keywords:
+  - cuaderno reproducible
+  - gestión del riesgo de desastres
+  - Colombia
+  - MyST

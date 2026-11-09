@@ -1,52 +1,43 @@
-# See docs at: https://mystmd.org/guide/frontmatter
+# Documentación: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  title: Plantilla de Artículo MyST en Español
-  subtitle: Las partes de un artículo reproducible en MyST
+  title: Plantilla de Cuaderno Reproducible de Conocimiento del Riesgo
+  subtitle: Estructura, metadatos y ejemplo ejecutable con el Índice Oceánico Niño (ONI)
+  description: Plantilla en MyST para los Cuadernos Reproducibles de Conocimiento del Riesgo de Desastres de la UNGRD.
   authors:
-    - id: author1
-      name: Jane Doe
+    - id: autor1
+      name: Nombre Apellido
       orcid: 0000-0000-0000-0000
       corresponding: true
-      email: jane.doe@example.com
+      email: correo@ejemplo.org
       roles:
         - Investigation
-        - Project administration
         - Software
         - Visualization
       affiliations:
-        - example-org
-    - id: author2
-      name: John Smith
-      orcid: 0000-0000-0000-0001
-      corresponding: false
-      role: Project administration
-      affiliations:
-        - example-org
+        - institucion
   affiliations:
-    - id: example-org
-      name: Organización de Ejemplo
-      department: Departamento de Ejemplo
-      country: País de Ejemplo
-      url: https://example.com
-      email: contact@example.com
-      phone: 123-456-7890
-      fax: 123-456-7891
+    - id: institucion
+      name: Nombre de la institución
+      department: Dependencia o grupo de investigación
+      country: Colombia
+      url: https://ejemplo.org
+  github: https://github.com/scr-ungrd/cuadernos-reproducibles-crc000
+  binder: https://mybinder.org/v2/gh/scr-ungrd/cuadernos-reproducibles-crc000/HEAD
   open_access: true
   license:
-    content: CC-BY-SA-4.0
-    code: MIT
-  funding:
-    - statement: Declaración de financiamiento de ejemplo.
-      id: 10070
-      source:
-        - name: Fundación de Financiamiento de Ejemplo
-          doi: http://dx.doi.org/10.13039/100000000
-  subject: Envío original
+    content: CC-BY-4.0
+    code: Apache-2.0
+  subject: Cuaderno reproducible
   keywords:
+    - Cuaderno reproducible
+    - Gestión del riesgo de desastres
+    - Colombia
+    - ENOS
     - MyST
-    - Plantilla
-  date: 2026-07-24
+  # Cuando registres el repositorio en Zenodo, agrega aquí tu DOI:
+  # doi: 10.5281/zenodo.XXXXXXX
+  date: 2026-11-09
   requirements:
     - environment.yml
   resources:
@@ -70,10 +61,12 @@ project:
       output: tex.zip
   jupyter: true
 site:
-  title: Plantilla de Artículo MyST en Español
+  title: Plantilla de Cuaderno Reproducible
   options:
-    logo_text: Plantilla de Artículo MyST en Español
+    logo_text: Plantilla de Cuaderno Reproducible
   nav:
+    - title: Convocatoria UNGRD
+      url: https://scr-ungrd.github.io/cuadernos-reproducibles/convocatoria-cuadernos/
     - title: Guía de MyST
       url: https://mystmd.org/guide
   template: article-theme

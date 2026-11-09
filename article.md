@@ -1,132 +1,85 @@
 ---
-# Los metadatos del archivo se especifican como YAML de frontmatter
-title: Plantilla de Artículo MyST en Español
-subtitle: Cómo se documentan las partes de un artículo reproducible en MyST
-description: Plantilla en español que recorre las secciones y directivas típicas de un artículo MyST, aplicadas al ejemplo del Índice Oceánico Niño (ONI).
-date: 2026-07-24
+title: Plantilla de Cuaderno Reproducible de Conocimiento del Riesgo
+subtitle: Estructura, metadatos y ejemplo ejecutable con el Índice Oceánico Niño (ONI)
+description: Plantilla en MyST para los Cuadernos Reproducibles de Conocimiento del Riesgo de Desastres de la UNGRD, con la estructura narrativa y los requisitos de la convocatoria.
+date: 2026-11-09
 tags:
-  - myst
   - plantilla
-  - artículo reproducible
+  - cuaderno reproducible
+  - MyST
+  - ENOS
 thumbnail: images/banner.png
 abstract: |
-  Esta plantilla presenta, en español, las partes que componen un artículo científico reproducible escrito en MyST Markdown: metadatos, introducción, figuras, tablas, ecuaciones, citas, código ejecutable y datos. Como caso de aplicación se usa el Índice Oceánico Niño (ONI), publicado por el NOAA Climate Prediction Center, para mostrar cómo incrustar en el artículo la salida de un cuaderno de Jupyter.
+  Esta plantilla reúne la estructura mínima que deben tener los cuadernos postulados a la convocatoria de Cuadernos Reproducibles de Conocimiento del Riesgo de Desastres de la UNGRD: metadatos, narrativa científica en MyST, código ejecutable, figuras, tablas, ecuaciones, referencias y control de calidad. Como caso de ejemplo se descarga, procesa y visualiza el Índice Oceánico Niño (ONI) de la NOAA, de modo que el artículo incrusta directamente la figura generada por un cuaderno de Jupyter.
 summary: |
-  Guía en español de las partes de un artículo MyST, ilustrada con el procesamiento y la visualización del Índice Oceánico Niño (ONI).
+  Plantilla de la UNGRD para publicar cuadernos reproducibles de gestión del riesgo, ilustrada con el Índice Oceánico Niño (ONI).
 data_availability: |
-  El cuaderno [`enos.ipynb`](./notebooks/enos.ipynb) obtiene el Índice Oceánico Niño directamente del [NOAA Climate Prediction Center](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt) en tiempo de compilación; no se requiere guardar una copia local de estos datos en la carpeta `data/`.
+  El cuaderno [`enos.ipynb`](./notebooks/enos.ipynb) descarga el Índice Oceánico Niño directamente del [NOAA Climate Prediction Center](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt) al compilar el artículo; los datos son públicos y no se guarda una copia en `data/`. Los cuadernos que usen datos no descargables automáticamente deben incluir en `data/` un conjunto de muestra y documentar el acceso a la fuente.
 acknowledgments: |
-  Plantilla adaptada al español a partir de la plantilla oficial de MyST y de la organización de contenidos de [opengeos/myst-article-template](https://github.com/opengeos/myst-article-template).
+  Plantilla de la Subdirección para el Conocimiento del Riesgo de la UNGRD, adaptada de la [plantilla de envío de MyST](https://mystmd.org) y de [opengeos/myst-article-template](https://github.com/opengeos/myst-article-template).
 keypoints:
-  - Esta plantilla documenta en español las partes de un artículo MyST
-  - Cada sección ilustra una directiva distinta - figuras, tablas, ecuaciones, citas y código ejecutable
-  - El ejemplo aplicado usa el Índice Oceánico Niño del cuaderno enos.ipynb
+  - La plantilla sigue la estructura narrativa exigida por la convocatoria de la UNGRD
+  - Cada sección muestra una directiva de MyST - citas, tablas, figuras, ecuaciones y código ejecutable
+  - El ejemplo aplicado clasifica las fases del ENOS con el ONI en el cuaderno enos.ipynb
 ---
 
-# Introducción
+# Contexto y objetivo
 
-> El contenido de tu artículo se escribe en MyST Markdown y admite la [tipografía estándar de markdown](https://mystmd.org/guide/typography), además de numerosas [directivas y roles](https://mystmd.org/guide/syntax-overview) para figuras, tablas, ecuaciones, código ejecutable, etc.
+> Este archivo es el artículo principal del proyecto. Se escribe en MyST Markdown y admite la [tipografía estándar de markdown](https://mystmd.org/guide/typography) y numerosas [directivas y roles](https://mystmd.org/guide/syntax-overview). Las notas en formato de cita, como esta, explican la directiva que se muestra a continuación; bórralas cuando uses la plantilla.
 
-Esta plantilla recorre, sección por sección, las partes habituales de un artículo MyST: los metadatos del frontmatter, el texto narrativo, las figuras, las tablas, las ecuaciones, las citas y el código ejecutable. Cada apartado incluye una nota como esta, en formato de cita, que explica la directiva correspondiente antes de mostrarla en uso.
+Todo cuaderno de esta colección debe presentar el problema, la escala territorial y la justificación de la metodología. Aquí el problema es sencillo y sirve de ejemplo: determinar en qué fase del fenómeno El Niño–Oscilación del Sur (ENOS) se encuentra el Pacífico ecuatorial, porque esa fase condiciona la lluvia y la temperatura en Colombia y, con ellas, la amenaza por sequías, incendios de cobertura vegetal e inundaciones.
 
-## A quién está dirigida esta plantilla
+## Cómo usar esta plantilla
 
-Esta plantilla está pensada para autores de habla hispana que quieran preparar un artículo reproducible con MyST: informes técnicos, notas de análisis de datos o artículos científicos que combinen texto, código y figuras generadas a partir de cuadernos de Jupyter.
+1. Crea tu repositorio con **Use this template** en GitHub.
+2. Reemplaza el cuaderno `notebooks/enos.ipynb` por el tuyo y conserva su estructura narrativa.
+3. Actualiza `myst.yml` (título, autores, afiliaciones, palabras clave), `environment.yml` y `references.bib`.
+4. Reescribe este artículo con el resumen y los resultados de tu análisis.
+5. Verifica que todo se ejecute desde cero con `myst build --html` y postula tu cuaderno siguiendo la [convocatoria](https://scr-ungrd.github.io/cuadernos-reproducibles/convocatoria-cuadernos/).
 
-## Cómo leer este artículo
+# Metadatos (frontmatter)
 
-Cada sección se apoya en la anterior. Las citas en formato de bloque (como las de este párrafo) explican qué directiva de MyST se está usando; el texto que sigue muestra un ejemplo concreto de esa directiva.
+> El bloque YAML al inicio del archivo, delimitado por `---`, define los metadatos del artículo: título, resumen (`abstract`), palabras clave, disponibilidad de datos y agradecimientos, entre otros campos de la [documentación de frontmatter](https://mystmd.org/guide/frontmatter). Los metadatos del proyecto completo (autores, afiliaciones, licencia, DOI) se definen en `myst.yml`.
 
-# Metadatos del artículo (frontmatter)
+La guía de la convocatoria pide que el repositorio incluya, como mínimo, título, autores, institución, palabras clave temáticas (amenaza, departamento y escala espacial) y el DOI de Zenodo. Los dos primeros niveles de metadatos se editan en este encabezado y en `myst.yml`.
 
-> El bloque YAML al inicio de este archivo, delimitado por `---`, define los metadatos del artículo: título, subtítulo, autores, resumen (`abstract`), palabras clave, disponibilidad de datos y agradecimientos, entre otros campos descritos en la [documentación de frontmatter de MyST](https://mystmd.org/guide/frontmatter). Los metadatos del proyecto completo -autores, afiliaciones, licencia, financiamiento- se definen en `myst.yml`.
+# Datos de entrada
 
-Revisa el encabezado de este archivo y el archivo `myst.yml` en la raíz del proyecto para ver ejemplos de ambos niveles de metadatos: los específicos de este artículo y los del proyecto en su conjunto.
+> Todos los datos deben estar en la carpeta `data/` o poder obtenerse en tiempo de ejecución desde una fuente abierta, como en este ejemplo. Documenta siempre la fuente, el formato, la resolución espaciotemporal y las limitaciones.
 
-# Primeros pasos
+El cuaderno [`enos.ipynb`](./notebooks/enos.ipynb) descarga el Índice Oceánico Niño (ONI) del [NOAA Climate Prediction Center](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt): la media móvil de tres meses de la anomalía de la temperatura superficial del mar en la región Niño 3.4 [@trenberth1997; @huang2017]. Los datos son públicos, no requieren registro y se publican como una tabla ASCII.
 
-## Conceptos clave
+> Las tablas simples se crean con la [directiva list-table](https://mystmd.org/guide/tables) y se referencian en el texto por su `name`.
 
-> Puedes [agregar citas de dos maneras](https://mystmd.org/guide/citations). La primera es insertar un enlace de markdown a un DOI, así: [](10.1093/nar/22.22.4673); no se requiere información bibliográfica adicional, ya que la referencia se busca automáticamente por su DOI. La segunda es declarar la bibliografía en un archivo BibTeX, por convención `references.bib`, y citar por clave con `@cite2023` o `[@cite2023; @cite2023b]` para citas narrativas o parentéticas, respectivamente. Un mismo artículo puede combinar ambos estilos.
-
-Estudios de ejemplo, como @loremipsum2024, proponen un modelo genérico de dos componentes; una primera parte (30-40 unidades de ejemplo) que alimenta una segunda componente, más superficial (10-20 unidades de ejemplo).
-
-```{code-cell} ipython3
-print("¡Hola, MyST!")
-```
-
-> Las celdas de código como la anterior, definidas con la directiva `code-cell`, se ejecutan al compilar el artículo y su salida se incrusta directamente en el documento.
-
-## Herramientas empleadas
-
-> Las tablas simples se crean con la [directiva list-table](https://mystmd.org/guide/tables). Igual que las figuras, pueden referenciarse en el texto mediante su `name`. La primera línea de la directiva es el título de la tabla.
-
-```{list-table} Herramientas empleadas en esta plantilla
+```{list-table} Resumen de la fuente de datos del ejemplo
 :header-rows: 1
-:name: tab-herramientas
+:name: tab-datos
 
-* - Herramienta
-  - Descripción
-  - Versión
-* - Python
-  - Lenguaje de programación
-  - 3.x
-* - pandas
-  - Manejo de datos tabulares
-  - ver `environment.yml`
-* - Matplotlib
-  - Generación de figuras
-  - ver `environment.yml`
-* - MyST
-  - Marco de autoría en markdown
-  - ver `mystmd` instalado
+* - Característica
+  - Detalle
+* - Fuente
+  - NOAA Climate Prediction Center
+* - Variable
+  - Anomalía de la temperatura superficial del mar, región Niño 3.4 (°C)
+* - Resolución temporal
+  - Temporadas móviles de 3 meses, desde 1950
+* - Acceso
+  - Público y gratuito, sin registro
 ```
 
-Como se ve en la [Tabla %s](#tab-herramientas), el entorno se define de forma reproducible en `environment.yml`.
+La [Tabla %s](#tab-datos) resume la fuente. Las tablas de este tipo ayudan a cumplir el principio de datos *Accesibles* de FAIR.
 
-# Instalación
+# Metodología
 
-## Requisitos previos
-
-Para compilar este artículo necesitas Node.js (para el CLI de MyST) y un entorno de Python con las dependencias listadas en `environment.yml`.
-
-## Pasos de instalación
-
-```bash
-npm install -g mystmd
-conda env create -f environment.yml
-```
-
-## Verificar la instalación
+> Los fragmentos de código se ejecutan al compilar el artículo con la directiva `code-cell`, y su salida se incrusta en el documento. La explicación narrativa debe cubrir el *por qué* de cada decisión: parámetros, umbrales y fuentes.
 
 ```{code-cell} ipython3
-import sys
-print(f"Versión de Python: {sys.version}")
+print("¡Hola, MyST! Este código se ejecuta al compilar el artículo.")
 ```
 
-Luego compila todas las exportaciones definidas en `myst.yml`:
+El cuaderno convierte las temporadas móviles en una serie de tiempo (usando el mes central de cada temporada) y clasifica cada una como El Niño, La Niña o Neutral con el umbral estándar de ±0,5 °C. La probabilidad de que ocurra al menos un evento durante un periodo puede expresarse con una distribución de Poisson [](#poisson), un ejemplo del uso de ecuaciones numeradas.
 
-```bash
-myst build --all
-```
-
-# Figuras
-
-> Las figuras se agregan con la [directiva figure](https://mystmd.org/guide/figures). Pueden referirse a imágenes guardadas en la carpeta `images/`, imágenes en la web, o salidas de celdas de un cuaderno [referenciadas por etiqueta](https://mystmd.org/guide/cross-references#targeting-cells). El atributo `:name:` permite referenciar la figura en el texto, como en el párrafo siguiente.
-
-```{figure} images/banner.png
-:name: banner
-:align: center
-:width: 100%
-
-Imagen de encabezado de la plantilla, referenciada como [Figura %s](#banner) en el texto.
-```
-
-# Ecuaciones
-
-> Las ecuaciones numeradas se definen con la [directiva math o en línea](https://mystmd.org/guide/math). Las ecuaciones definidas con la directiva math pueden referenciarse en el texto por su etiqueta.
-
-La probabilidad de que ocurra un evento puede modelarse con una distribución de Poisson [](#poisson).
+> Las ecuaciones se definen con la [directiva math](https://mystmd.org/guide/math) y se referencian por su etiqueta.
 
 ```{math}
 :label: poisson
@@ -134,35 +87,55 @@ La probabilidad de que ocurra un evento puede modelarse con una distribución de
 p(x)=\frac{e^{-\lambda} \lambda^{x}}{x !}
 ```
 
-Donde $\lambda$ es la tasa de ocurrencia del evento por año. La probabilidad de que ocurra al menos un evento en los próximos $t$ años se calcula como:
+donde $\lambda$ es la tasa de ocurrencia del evento por año. La probabilidad de que ocurra al menos un evento en los próximos $t$ años es:
 
 ```{math}
-:label: probability
+:label: probabilidad
 
 p_e = 1-\mathrm{e}^{-t \lambda}
 ```
 
-# Datos y resultados
+> Las citas se agregan de dos maneras ([guía](https://mystmd.org/guide/citations)): con un enlace a un DOI, como [](10.1175/JCLI-D-16-0836.1), o con una clave del archivo `references.bib`, como en `@trenberth1997`. Ambos estilos pueden combinarse.
 
-> Todos los datos usados en el cuaderno deben estar disponibles en la carpeta `data/`, o bien obtenerse en tiempo de ejecución desde una fuente externa, como en el ejemplo siguiente.
+# Resultados e interpretación
 
-Como ejemplo de obtención de datos desde una fuente externa en vivo, el cuaderno [`enos.ipynb`](./notebooks/enos.ipynb) carga el Índice Oceánico Niño (ONI) directamente del [NOAA Climate Prediction Center](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt), un conjunto de datos público sin restricciones de uso. El cuaderno descarga la tabla ASCII al momento de compilar el artículo, por lo que no es necesario mantener una copia local en la carpeta `data/`.
-
-La serie del ONI se procesa en el cuaderno [`enos.ipynb`](./notebooks/enos.ipynb), convirtiendo las temporadas móviles de 3 meses publicadas en una serie de tiempo y clasificando cada temporada como El Niño, La Niña o Neutral usando el umbral estándar de anomalía de ±0.5°C.
+> Las figuras se agregan con la [directiva figure](https://mystmd.org/guide/figures). Pueden ser imágenes de `images/`, imágenes de la web o la salida de una celda de un cuaderno, [referenciada por su etiqueta](https://mystmd.org/guide/cross-references#targeting-cells).
 
 ```{figure} #fig-enso
 :name: enso
 
-Anomalía del Índice Oceánico Niño (ONI) a lo largo del tiempo, coloreada según la fase ENOS (El Niño / La Niña / Neutral).
-Esta figura usa la salida de una celda del cuaderno [`enos.ipynb`](./notebooks/enos.ipynb). La primera línea de la [celda](#fig-enso) es `#| label: fig-enso`; referenciar esa etiqueta incorpora la salida de la celda como figura.
+Anomalía del Índice Oceánico Niño (ONI) a lo largo del tiempo, coloreada según la fase del ENOS (El Niño, La Niña o Neutral). La figura es la salida de la celda con la etiqueta `#| label: fig-enso` del cuaderno [`enos.ipynb`](./notebooks/enos.ipynb).
 ```
 
-En la [Figura %s](#enso) se observa la alternancia entre fases cálidas (El Niño) y frías (La Niña) a lo largo del registro histórico, con anomalías que superan regularmente el umbral de clasificación de ±0.5°C en ambas direcciones.
+La [Figura %s](#enso) muestra la alternancia entre fases cálidas y frías, con anomalías que superan de manera recurrente el umbral de ±0,5 °C. Entre las temporadas más recientes de la serie, el índice pasa de condiciones frías a finales de 2025 a un episodio cálido en desarrollo en 2026. Para interpretar esta información en términos de riesgo, consulta el cuaderno [CRC-006: Escenarios de riesgo ante el fenómeno El Niño 2026–2027](https://scr-ungrd.github.io/cuadernos-reproducibles-crc006/).
 
-# Conclusión
+# Limitaciones y recomendaciones
 
-Esta plantilla mostró, en español, las partes principales de un artículo MyST -metadatos, figuras, tablas, ecuaciones, citas y código ejecutable- usando como caso aplicado el flujo completo del cuaderno [`enos.ipynb`](./notebooks/enos.ipynb): obtención de datos en vivo desde una fuente pública de NOAA, su procesamiento en una serie de tiempo clasificada, y la incorporación de la figura resultante directamente en el artículo mediante la referencia a la salida de una celda.
+Discute con honestidad los supuestos, las incertidumbres no cuantificadas y las extensiones posibles. En este ejemplo, el ONI es un índice global del Pacífico ecuatorial y no describe por sí solo los impactos locales en Colombia; para ello hay que cruzarlo con series de precipitación y temperatura del IDEAM y con registros de eventos.
 
-## Agradecimientos
+# Control de calidad antes de la entrega
 
-Plantilla adaptada al español a partir de la plantilla oficial de MyST y de la organización de contenidos de [opengeos/myst-article-template](https://github.com/opengeos/myst-article-template).
+Antes de postular tu cuaderno, verifica que:
+
+- Se ejecuta completo desde cero en un entorno creado con `environment.yml`.
+- Ninguna celda depende de variables definidas fuera de orden.
+- Las rutas son relativas al repositorio.
+- El repositorio tiene licencia abierta, un *release* en GitHub y un DOI de Zenodo.
+
+# Instalación y compilación
+
+```bash
+git clone https://github.com/<tu-usuario>/<tu-repositorio>.git
+cd <tu-repositorio>
+conda env create -f environment.yml
+conda activate cuaderno-reproducible
+npm install -g mystmd
+myst build --html
+```
+
+Para generar también el PDF y las demás exportaciones definidas en `myst.yml`, usa `myst build --all`.
+
+# Referencias
+
+```{bibliography}
+```
