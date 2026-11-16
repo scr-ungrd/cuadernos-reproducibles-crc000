@@ -30,24 +30,19 @@ jobs:
         uses: actions/configure-pages@v5
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 22.x
       - name: Install MyST Markdown
         run: npm install -g mystmd
       - name: Install imagemagick, inkscape, and webp
         run: |
           sudo apt-get update
-          sudo apt-get install -y inkscape imagemagick webp
-      - name: Install TeX and packages
+          sudo apt-get install -y inkscape imagemagick webp fonts-liberation
+      - name: Install Typst
         run: |
-          wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
-          echo "$HOME/bin" >> $GITHUB_PATH
-      - name: Install TeX packages
-        run: |
-          tlmgr update --self
-          tlmgr install apacite lineno morefloats ragged2e soul glossaries
-      - name: Build all content (PDF, JATS, MECA)
-        run: myst build --all
+          curl -fsSL https://github.com/typst/typst/releases/download/v0.15.0/typst-x86_64-unknown-linux-musl.tar.xz | tar -xJ
+          sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin/typst
+      - name: Build PDF (Typst), JATS and MECA
+        run: myst build --typst --jats --meca
       - name: Build Static HTML Assets
         run: myst build --html
       - name: Upload artifact

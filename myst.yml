@@ -43,6 +43,9 @@ project:
   resources:
     - README.md
   banner: ./images/banner.png
+  downloads:
+    - id: article-pdf
+      title: Generar PDF
   options:
     draft: false
   exports:
@@ -53,9 +56,11 @@ project:
       article: article.md
       sub_articles:
         - notebooks/enos.ipynb
-    - format: pdf
+    - format: typst
       article: article.md
       output: article.pdf
+      template: ./_templates/plain-typst-article
+      id: article-pdf
     - format: tex
       article: article.md
       output: tex.zip
@@ -69,4 +74,4 @@ site:
       url: https://scr-ungrd.github.io/cuadernos-reproducibles/convocatoria-cuadernos/
     - title: Guía de MyST
       url: https://mystmd.org/guide
-  template: article-theme
+  template: https://github.com/myst-templates/article-theme/archive/4acce1eba558b301c2aadca99a7804aa6e294e1e.zip
