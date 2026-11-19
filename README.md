@@ -44,6 +44,7 @@ El ejemplo incluido descarga el Índice Oceánico Niño (ONI) de la NOAA, clasif
 | `environment.yml` | Dependencias del entorno de conda |
 | `LICENSE` y `CITATION.cff` | Licencia del código (Apache 2.0) y metadatos de citación |
 | `.github/workflows/deploy.yml` | Compila y publica el sitio en GitHub Pages en cada *push* a `main` |
+| `SECURITY.md` y `metadata/escaneo_seguridad.md` | Política de seguridad y registro del escaneo previo al release |
 
 ## Estructura narrativa del cuaderno
 

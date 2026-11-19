@@ -2,8 +2,12 @@ name: cuaderno-reproducible
 channels:
   - conda-forge
 dependencies:
-  - python>=3.10
-  - pandas
-  - matplotlib
-  - jupyterlab>=4.0.0
-  - jupyterlab-myst>=2.0.0
+  - python=3.11
+  - pip
+  - pip:
+    # Versiones exactas. pandas, matplotlib y jupyterlab son las verificadas en CRC001; jupyterlab-myst es la
+    # última de PyPI al 2026-11-19. Esta plantilla no se ha ejecutado con este entorno: revísalas al crear tu cuaderno.
+    - pandas==3.1.1
+    - matplotlib==3.11.2
+    - jupyterlab==4.6.6
+    - jupyterlab-myst==2.7.0

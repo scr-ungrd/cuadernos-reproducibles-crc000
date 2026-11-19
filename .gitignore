@@ -9,3 +9,8 @@ files/
 *_pdf_logs/
 *_pdf_tex/
 env/
+
+# Secretos y configuración local (nunca se versionan)
+.env
+.env.*
+!.env.example
