@@ -49,6 +49,9 @@ jobs:
           tar -xJf typst.tar.xz
           sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin/typst
       - name: Build PDF (Typst), JATS and MECA
+        env:
+          # STIX Two Math (ecuaciones) viene en fonts/: así el PDF es idéntico al local
+          TYPST_FONT_PATHS: ${{ github.workspace }}/fonts
         run: myst build --typst --jats --meca
       - name: Build Static HTML Assets
         run: myst build --html

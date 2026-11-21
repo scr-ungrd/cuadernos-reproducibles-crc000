@@ -60,6 +60,9 @@ project:
       article: article.md
       output: article.pdf
       template: ./_templates/plain-typst-article
+      titulo_breve: Plantilla cuaderno ENOS
+      version: v0.1.0
+      colab: https://colab.research.google.com/github/scr-ungrd/cuadernos-reproducibles-crc000/blob/main/notebooks/enos.ipynb
       id: article-pdf
     - format: tex
       article: article.md

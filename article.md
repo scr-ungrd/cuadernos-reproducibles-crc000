@@ -23,6 +23,18 @@ keypoints:
   - El ejemplo aplicado clasifica las fases del ENOS con el ONI en el cuaderno enos.ipynb
 ---
 
+## Stack
+
+> Caja de resumen técnico que el PDF dibuja en la página 1 (una línea «Etiqueta: valor» por dato, alineada a 23 caracteres; la ejecución recomendada es una línea más). El bloque debe llevar el lenguaje `text`.
+
+```text
+Herramienta principal: Python 3.11 con pandas y matplotlib
+Datos base:            Índice Oceánico Niño (ONI) de la NOAA
+Escenarios:            No aplica (clasificación histórica de fases del ENOS)
+Punto de análisis:     Región Niño 3.4, Pacífico ecuatorial
+Ejecución recomendada: Google Colab con runtime CPU
+```
+
 # Contexto y objetivo
 
 > Este archivo es el artículo principal del proyecto. Se escribe en MyST Markdown y admite la [tipografía estándar de markdown](https://mystmd.org/guide/typography) y numerosas [directivas y roles](https://mystmd.org/guide/syntax-overview). Las notas en formato de cita, como esta, explican la directiva que se muestra a continuación; bórralas cuando uses la plantilla.
@@ -36,6 +48,10 @@ Todo cuaderno de esta colección debe presentar el problema, la escala territori
 3. Actualiza `myst.yml` (título, autores, afiliaciones, palabras clave), `environment.yml` y `references.bib`.
 4. Reescribe este artículo con el resumen y los resultados de tu análisis.
 5. Verifica que todo se ejecute desde cero con `myst build --html` y postula tu cuaderno siguiendo la [convocatoria](https://scr-ungrd.github.io/cuadernos-reproducibles/convocatoria-cuadernos/).
+
+### Subtítulos de nivel 3
+
+En el PDF, un título de nivel 3 (por ejemplo, «2.3.1 Título») va en negrita y azul en la misma línea que el inicio del párrafo que le sigue, terminado en punto, y no en una línea aparte; en la versión web el título va aparte, como siempre. Escribe siempre un párrafo justo después de este tipo de título (no una figura, una tabla ni una lista).
 
 # Metadatos (frontmatter)
 

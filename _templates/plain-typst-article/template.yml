@@ -11,6 +11,8 @@ files:
   - template.typ
   - style.typ
   - subpar-wrap.typ
+  - logo.svg
+  - colab.svg
 
 authors:
   - name: Subdirección para el Conocimiento del Riesgo (UNGRD)
@@ -32,7 +34,16 @@ doc:
   - id: open_access
   - id: bibliography
 
-options: []
+options:
+  - id: version
+    type: string
+    description: Versión del cuaderno que se imprime en la portada (por ejemplo v2.0.0).
+  - id: colab
+    type: string
+    description: URL del cuaderno en Google Colab; se imprime como icono con enlace en la portada.
+  - id: titulo_breve
+    type: string
+    description: Título breve del encabezado de las páginas 2 en adelante (2–4 palabras).
 
 parts:
   - id: abstract

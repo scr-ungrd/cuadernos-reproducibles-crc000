@@ -20,7 +20,17 @@
   github: "[-doc.github-]",
 [# endif #]
   keywords: ([# for keyword in doc.keywords #]"[-keyword-]", [# endfor #]),
+[# if options.version #]
+  version: "[-options.version-]",
+[# endif #]
+[# if options.colab #]
+  colab: "[-options.colab-]",
+[# endif #]
+[# if options.titulo_breve #]
+  supertitle: "[-options.titulo_breve-]",
+[# else #]
   supertitle: "Cuaderno reproducible",
+[# endif #]
   journal: "Cuadernos Reproducibles de Conocimiento del Riesgo",
 [# if doc.github #]
   // Report id taken from the repository name, e.g. ".../cuadernos-reproducibles-crc001" -> "CRC001".
@@ -45,13 +55,6 @@
 // in one piece (with its legend).
 #import "subpar-wrap.typ" as subpar
 #let breakableDefault = false
-
-// The first section of the body starts on a new page (page 2) when the document labels it:
-// put `(inicio-cuerpo)=` right before its heading (mystmd turns it into the Typst label below).
-#show <inicio-cuerpo>: it => {
-  pagebreak(weak: true)
-  it
-}
 
 // The front page is always drawn; the abstract and the key points are optional parts.
 #front-page(
@@ -78,5 +81,5 @@
 [# endif #]
 
 [# if doc.bibliography #]
-#bibliography("[- doc.bibliography | join(", ") -]", title: "References", style: "apa")
+#bibliography("[- doc.bibliography | join(", ") -]", title: "Referencias", style: "apa")
 [# endif #]
