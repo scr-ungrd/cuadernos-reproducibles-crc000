@@ -14,13 +14,13 @@ abstract: |
 summary: |
   Plantilla de la UNGRD para publicar cuadernos reproducibles de gestión del riesgo, ilustrada con el Índice Oceánico Niño (ONI).
 data_availability: |
-  El cuaderno [`enos.ipynb`](./notebooks/enos.ipynb) descarga el Índice Oceánico Niño directamente del [NOAA Climate Prediction Center](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt) al compilar el artículo; los datos son públicos y no se guarda una copia en `data/`. Los cuadernos que usen datos no descargables automáticamente deben incluir en `data/` un conjunto de muestra y documentar el acceso a la fuente.
+  El cuaderno [`01_enos.ipynb`](./notebooks/01_enos.ipynb) descarga el Índice Oceánico Niño directamente del [NOAA Climate Prediction Center](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt) al compilar el artículo; los datos son públicos y no se guarda una copia en `data/`. Los cuadernos que usen datos no descargables automáticamente deben incluir en `data/` un conjunto de muestra y documentar el acceso a la fuente.
 acknowledgments: |
   Plantilla de la Subdirección para el Conocimiento del Riesgo de la UNGRD, adaptada de la [plantilla de envío de MyST](https://mystmd.org) y de [opengeos/myst-article-template](https://github.com/opengeos/myst-article-template).
 keypoints:
   - La plantilla sigue la estructura narrativa exigida por la convocatoria de la UNGRD
   - Cada sección muestra una directiva de MyST - citas, tablas, figuras, ecuaciones y código ejecutable
-  - El ejemplo aplicado clasifica las fases del ENOS con el ONI en el cuaderno enos.ipynb
+  - El ejemplo aplicado clasifica las fases del ENOS con el ONI en el cuaderno 01_enos.ipynb
 ---
 
 ## Stack
@@ -44,7 +44,7 @@ Todo cuaderno de esta colección debe presentar el problema, la escala territori
 ## Cómo usar esta plantilla
 
 1. Crea tu repositorio con **Use this template** en GitHub.
-2. Reemplaza el cuaderno `notebooks/enos.ipynb` por el tuyo y conserva su estructura narrativa.
+2. Reemplaza el cuaderno `notebooks/01_enos.ipynb` por el tuyo y conserva su estructura narrativa.
 3. Actualiza `myst.yml` (título, autores, afiliaciones, palabras clave), `environment.yml` y `references.bib`.
 4. Reescribe este artículo con el resumen y los resultados de tu análisis.
 5. Verifica que todo se ejecute desde cero con `myst build --html` y postula tu cuaderno siguiendo la [convocatoria](https://scr-ungrd.github.io/cuadernos-reproducibles/convocatoria-cuadernos/).
@@ -63,7 +63,7 @@ La guía de la convocatoria pide que el repositorio incluya, como mínimo, títu
 
 > Todos los datos deben estar en la carpeta `data/` o poder obtenerse en tiempo de ejecución desde una fuente abierta, como en este ejemplo. Documenta siempre la fuente, el formato, la resolución espaciotemporal y las limitaciones.
 
-El cuaderno [`enos.ipynb`](./notebooks/enos.ipynb) descarga el Índice Oceánico Niño (ONI) del [NOAA Climate Prediction Center](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt): la media móvil de tres meses de la anomalía de la temperatura superficial del mar en la región Niño 3.4 [@trenberth1997; @huang2017]. Los datos son públicos, no requieren registro y se publican como una tabla ASCII.
+El cuaderno [`01_enos.ipynb`](./notebooks/01_enos.ipynb) descarga el Índice Oceánico Niño (ONI) del [NOAA Climate Prediction Center](https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt): la media móvil de tres meses de la anomalía de la temperatura superficial del mar en la región Niño 3.4 [@trenberth1997; @huang2017]. Los datos son públicos, no requieren registro y se publican como una tabla ASCII.
 
 > Las tablas simples se crean con la [directiva list-table](https://mystmd.org/guide/tables) y se referencian en el texto por su `name`.
 
@@ -120,7 +120,7 @@ p_e = 1-\mathrm{e}^{-t \lambda}
 ```{figure} #fig-enso
 :name: enso
 
-Anomalía del Índice Oceánico Niño (ONI) a lo largo del tiempo, coloreada según la fase del ENOS (El Niño, La Niña o Neutral). La figura es la salida de la celda con la etiqueta `#| label: fig-enso` del cuaderno [`enos.ipynb`](./notebooks/enos.ipynb).
+Anomalía del Índice Oceánico Niño (ONI) a lo largo del tiempo, coloreada según la fase del ENOS (El Niño, La Niña o Neutral). La figura es la salida de la celda con la etiqueta `#| label: fig-enso` del cuaderno [`01_enos.ipynb`](./notebooks/01_enos.ipynb).
 ```
 
 La [Figura %s](#enso) muestra la alternancia entre fases cálidas y frías, con anomalías que superan de manera recurrente el umbral de ±0,5 °C. Entre las temporadas más recientes de la serie, el índice pasa de condiciones frías a finales de 2025 a un episodio cálido en desarrollo en 2026. Para interpretar esta información en términos de riesgo, consulta el cuaderno [CRC-006: Escenarios de riesgo ante el fenómeno El Niño 2026–2027](https://scr-ungrd.github.io/cuadernos-reproducibles-crc006/).

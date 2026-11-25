@@ -4,4 +4,4 @@
 format: jb-book
 root: article
 chapters:
-  - file: notebooks/enos
+  - file: notebooks/01_enos

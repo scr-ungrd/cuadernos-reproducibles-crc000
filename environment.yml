@@ -5,9 +5,10 @@ dependencies:
   - python=3.11
   - pip
   - pip:
-    # Versiones exactas. pandas, matplotlib y jupyterlab son las verificadas en CRC001; jupyterlab-myst es la
-    # última de PyPI al 2026-11-19. Esta plantilla no se ha ejecutado con este entorno: revísalas al crear tu cuaderno.
+    # Versiones exactas. El cuaderno 01_enos.ipynb se ejecutó completo con este entorno el 2026-11-25
+    # (jupyter nbconvert --execute). jupytext convierte un .md de MyST con {code-cell} a .ipynb.
     - pandas==3.1.1
     - matplotlib==3.11.2
     - jupyterlab==4.6.6
     - jupyterlab-myst==2.7.0
+    - jupytext==1.19.7
