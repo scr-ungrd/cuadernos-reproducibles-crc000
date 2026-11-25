@@ -1,8 +1,8 @@
 # Plantilla de Cuaderno Reproducible de Conocimiento del Riesgo
 
 [![Hecho con MyST](https://img.shields.io/badge/hecho%20con-MyST-orange)](https://mystmd.org)
-[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/scr-ungrd/cuadernos-reproducibles-crc000/blob/main/notebooks/enos.ipynb)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/scr-ungrd/cuadernos-reproducibles-crc000/HEAD?labpath=notebooks/enos.ipynb)
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/scr-ungrd/cuadernos-reproducibles-crc000/blob/main/notebooks/01_enos.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/scr-ungrd/cuadernos-reproducibles-crc000/HEAD?labpath=notebooks/01_enos.ipynb)
 
 Plantilla de la Subdirección para el Conocimiento del Riesgo (UNGRD) para crear un **cuaderno reproducible** y postularlo a la [convocatoria de Cuadernos Reproducibles](https://scr-ungrd.github.io/cuadernos-reproducibles/convocatoria-cuadernos/). Reúne en un solo repositorio:
 
@@ -13,7 +13,7 @@ Plantilla de la Subdirección para el Conocimiento del Riesgo (UNGRD) para crear
 
 El ejemplo incluido descarga el Índice Oceánico Niño (ONI) de la NOAA, clasifica las fases del ENOS (El Niño, La Niña y Neutral) y las grafica. Sustitúyelo por tu propio análisis.
 
-> **Aviso:** el proyecto de cuadernos reproducibles está en fase piloto; la convocatoria aún no se ha abierto y los cuadernos no han sido validados por expertos.
+> **Aviso:** la convocatoria está en fase piloto y abrirá el 1 de marzo de 2027. Los cuadernos publicados no han sido validados por personas expertas.
 
 ## Cómo usar la plantilla
 
@@ -27,7 +27,8 @@ El ejemplo incluido descarga el Índice Oceánico Niño (ONI) de la NOAA, clasif
    conda activate cuaderno-reproducible
    ```
 
-3. Reemplaza `notebooks/enos.ipynb` por tu cuaderno y edita `article.md`, `myst.yml`, `environment.yml`, `references.bib` y `CITATION.cff`.
+3. Reemplaza `notebooks/01_enos.ipynb` por tu cuaderno y edita `article.md`, `myst.yml`, `environment.yml`, `references.bib` y `CITATION.cff`.
+   Si escribiste el cuaderno en MyST Markdown (`.md` con celdas `{code-cell}`), conviértelo con `jupytext --to ipynb cuaderno.md` y guarda el `.ipynb` en `notebooks/` con su número de orden.
 4. Compila y revisa el sitio en tu equipo:
 
    ```bash
@@ -38,14 +39,12 @@ El ejemplo incluido descarga el Índice Oceánico Niño (ONI) de la NOAA, clasif
 5. Compila el PDF y ajústalo (ver [El PDF](#el-pdf)).
 6. Cuando todo se ejecute completo y sin errores, sigue el proceso de postulación de la [convocatoria](https://scr-ungrd.github.io/cuadernos-reproducibles/convocatoria-cuadernos/).
 
-> El entorno de `environment.yml` fija versiones exactas, pero esta plantilla no se ha ejecutado con él: al crear tu cuaderno, verifica y ajusta las versiones de tus propias dependencias.
-
 ## Estructura del repositorio
 
 | Ruta | Contenido |
 |---|---|
 | `article.md` | Artículo principal en MyST Markdown: metadatos, resumen, caja *Stack* y las secciones del cuaderno |
-| `notebooks/` | Cuadernos `.ipynb` numerados en orden de ejecución (`enos.ipynb` es el ejemplo) |
+| `notebooks/` | Cuadernos `.ipynb` numerados en orden de ejecución (`01_enos.ipynb` es el ejemplo) |
 | `data/` | Datos de ejemplo o de prueba; si los descargas automáticamente, documenta la fuente |
 | `images/` | Imágenes y figuras estáticas (`banner.png` es la imagen de encabezado) |
 | `references.bib` | Bibliografía en BibTeX; también puedes citar con enlaces a DOI |
